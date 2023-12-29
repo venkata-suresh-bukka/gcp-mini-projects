@@ -1,0 +1,46 @@
+ASSET 4:- Deleting all empty gcp buckets.
+Problem:- Leaving empty buckets will just make over head to maintain.
+Solution:- Python script to delete all empty buckets using cloud function and cloud scheduler.
+ 
+Flow:- 
+From cloud scheduler a job will trigger a cloud function through http url and executes python script to delete all the empty buckets.
+Steps involved:
+Infrastructure creation using terraform.
+Resources: -
+⦁	Cloud scheduler
+⦁	Cloud function
+
+Folder structure:-
+ 
+Infra code for cloud scheduler:
+
+ 
+
+
+Infra code for cloud function:
+
+ 
+ 
+
+
+
+
+
+
+
+
+This below code is from modules from here we will have to pass the values to the main.tf file.
+
+ 
+
+Python script for all empty buckets--
+ 
+
+Output:-
+For no empty buckets
+ 
+For empty buckets deletion:
+ 
+Store logs of the output
+Other small assets:
+https://github.dxc.com/vbukka3/devops-mentorship-scripts
